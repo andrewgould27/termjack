@@ -9,6 +9,10 @@ void Dealer::addCard(Card card) {
     m_hand.addCard(card);
 }
 
+Hand Dealer::getHand() {
+    return m_hand;
+}
+
 void Dealer::displayHand(bool isPlayerTurn) {
     m_hand.displayHand(isPlayerTurn);
 }

@@ -4,6 +4,7 @@
 #include "Deck.h"
 #include "Player.h"
 #include "Dealer.h"
+#include "UI.h"
 
 class Game {
     public:
@@ -14,6 +15,7 @@ class Game {
     Deck m_deck;
     Player m_player;
     Dealer m_dealer;
+    UI m_ui;
 
     bool m_isPlayerTurn;
 

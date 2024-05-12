@@ -14,6 +14,8 @@ class Hand {
     void addCard(Card card);
     int getValue();
 
+    std::vector<Card> getCards();
+
     private:
     std::vector<Card> m_cards;
 };

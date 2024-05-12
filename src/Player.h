@@ -14,6 +14,7 @@ class Player {
     int getHandValue();
 
     void addCard(Card card);
+    Hand getHand();
     void displayHand();
     void clearHand();
     

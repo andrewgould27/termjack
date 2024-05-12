@@ -41,3 +41,7 @@ void Hand::displayHand(bool isPlayerTurn) {
         std::cout << m_cards[0].getRank() << m_cards[0].getSuit() << " ";
     std::cout << std::endl;
 }
+
+std::vector<Card> Hand::getCards() {
+    return m_cards;
+}

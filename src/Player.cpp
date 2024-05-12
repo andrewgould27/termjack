@@ -15,6 +15,10 @@ void Player::addCard(Card card) {
     m_hand.addCard(card);
 }
 
+Hand Player::getHand() {
+    return m_hand;
+}
+
 void Player::displayHand() {
     m_hand.displayHand();
 }

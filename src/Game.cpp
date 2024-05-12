@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-Game::Game() : m_deck(6), m_player(), m_dealer() {}
+Game::Game() : m_deck(6), m_player(), m_dealer(), m_ui() {}
 
 void Game::play() {
     std::cout << "Welcome to TermJack!" << std::endl;
@@ -38,7 +38,7 @@ void Game::playerTurn() {
     m_isPlayerTurn = true;
     while (m_player.getHandValue() < 21) {
         displayGameState();
-        std::cout << "Do you want to hit or stand? [h/s]: ";
+        std::cout << "Do you want to [h]it or [s]tand? ";
         char choice;
         std::cin >> choice;
 
@@ -82,9 +82,11 @@ void Game::displayResult() {
 }
 
 void Game::displayGameState() {
-    // Construct a screen buffer or something idk
-    std::cout << "Dealer's hand: ";
-    m_dealer.displayHand(m_isPlayerTurn);
-    std::cout << "Player's Hand: ";
-    m_player.displayHand();
+    m_ui.clearScreen();
+    std::cout << "Dealer's hand:\n";
+    m_ui.drawHand(m_dealer.getHand(), m_isPlayerTurn);
+    std::cout << "Player's Hand:\n";
+    m_ui.drawHand(m_player.getHand());
+
+    
 }
