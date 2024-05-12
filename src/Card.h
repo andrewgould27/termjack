@@ -1,6 +1,8 @@
 #ifndef CARD_H
 #define CARD_H
 
+#include <string>
+
 class Card {
     public:
     enum Suit {
@@ -14,8 +16,10 @@ class Card {
     };
     
     Card(Rank rank, Suit suit);
-
     int getValue() const;
+
+    std::string getRank();
+    std::string getSuit();
 
     private:
     Rank m_rank;

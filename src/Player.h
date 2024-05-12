@@ -13,6 +13,10 @@ class Player {
 
     int getHandValue();
 
+    void addCard(Card card);
+    void displayHand();
+    void clearHand();
+    
     private:
     Hand m_hand;
 };

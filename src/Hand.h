@@ -8,6 +8,8 @@ class Hand {
     public:
     Hand();
 
+    void displayHand();
+
     void addCard(Card card);
     int getValue();
 

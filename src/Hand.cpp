@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "Hand.h"
 
 Hand::Hand() {
@@ -23,4 +25,10 @@ int Hand::getValue() {
     // Probably add something about handling aces, stupid blackjack
 
     return sum;
+}
+
+void Hand::displayHand() {
+    for (Card card : m_cards)
+        std::cout << card.getRank() << card.getSuit() << " ";
+    std::cout << std::endl;
 }

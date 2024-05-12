@@ -1,8 +1,6 @@
 #include "Player.h"
 
-Player::Player() {
-
-}
+Player::Player() : m_hand() {}
 
 void Player::hit(Deck &deck) {
     Card card = deck.drawCard();
@@ -11,6 +9,18 @@ void Player::hit(Deck &deck) {
 
 void Player::stand() {
     // Is this even necessary, idk
+}
+
+void Player::addCard(Card card) {
+    m_hand.addCard(card);
+}
+
+void Player::displayHand() {
+    m_hand.displayHand();
+}
+
+void Player::clearHand() {
+    m_hand = Hand();
 }
 
 int Player::getHandValue() {
