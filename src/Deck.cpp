@@ -20,3 +20,12 @@ void Deck::shuffle() {
         std::swap(m_cards[i], m_cards[r]);
     }
 }
+
+Card Deck::drawCard() {
+    if (m_cards.empty())
+        throw std::logic_error("Cannot draw from an empty deck.");
+    
+    Card card = m_cards.back();
+    m_cards.pop_back();
+    return card;
+}

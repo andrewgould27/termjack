@@ -9,6 +9,7 @@ class Deck {
     Deck(int num_decks);
 
     void shuffle();
+    Card drawCard();
 
     private:
     std::vector<Card> m_cards;

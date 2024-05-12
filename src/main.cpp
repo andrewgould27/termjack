@@ -1,6 +1,12 @@
 #include <iostream>
 
+#include "Game.h"
+
 int main() {
-    std::cout << "TermJack\n";
-    while (true);
+    while (true) {
+        Game game = Game();
+        game.play();
+    }
+
+    return 0;
 }
