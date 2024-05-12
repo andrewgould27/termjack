@@ -11,6 +11,8 @@ class Deck {
     void shuffle();
     Card drawCard();
 
+    size_t size();
+
     private:
     std::vector<Card> m_cards;
 };

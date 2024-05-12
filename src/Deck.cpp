@@ -11,6 +11,10 @@ Deck::Deck(int num_decks = 6) {
                 m_cards.emplace_back(static_cast<Card::Rank>(rank), static_cast<Card::Suit>(suit));
 }
 
+size_t Deck::size() {
+    return m_cards.size();
+}
+
 void Deck::shuffle() {
     if (m_cards.size() == 0) 
         throw std::logic_error("Cannot shuffle an empty deck.");

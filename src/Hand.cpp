@@ -32,3 +32,12 @@ void Hand::displayHand() {
         std::cout << card.getRank() << card.getSuit() << " ";
     std::cout << std::endl;
 }
+
+void Hand::displayHand(bool isPlayerTurn) {
+    if (!isPlayerTurn)
+        for (Card card : m_cards)
+            std::cout << card.getRank() << card.getSuit() << " ";
+    else 
+        std::cout << m_cards[0].getRank() << m_cards[0].getSuit() << " ";
+    std::cout << std::endl;
+}

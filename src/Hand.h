@@ -9,6 +9,7 @@ class Hand {
     Hand();
 
     void displayHand();
+    void displayHand(bool isPlayerTurn);
 
     void addCard(Card card);
     int getValue();

@@ -15,6 +15,10 @@ class Game {
     Player m_player;
     Dealer m_dealer;
 
+    bool m_isPlayerTurn;
+
+    size_t playerWins = 0, dealerWins = 0;
+
     void initializeRound();
     void playerTurn();
     void dealerTurn();

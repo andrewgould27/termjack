@@ -7,7 +7,7 @@ class Dealer {
 
     void addCard(Card card);
 
-    void displayHand();
+    void displayHand(bool isPlayerTurn);
     void clearHand();
     int getHandValue();
 
