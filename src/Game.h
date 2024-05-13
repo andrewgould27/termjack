@@ -17,9 +17,9 @@ class Game {
     Dealer m_dealer;
     UI m_ui;
 
-    bool m_isPlayerTurn;
-
     size_t playerWins = 0, dealerWins = 0;
+
+    bool m_isPlayerTurn;
 
     void initializeRound();
     void playerTurn();

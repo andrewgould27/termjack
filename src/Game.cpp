@@ -58,7 +58,8 @@ void Game::dealerTurn() {
 }
 
 bool Game::isGameOver() {
-    return m_player.getHandValue() > 21 || m_dealer.getHandValue() > 21;
+    //return m_player.getHandValue() > 21 || m_dealer.getHandValue() > 21;
+    return false;
 }
 
 void Game::displayResult() {
@@ -70,23 +71,31 @@ void Game::displayResult() {
 
     if (playerValue > 21) {
         std::cout << "Player busts! Dealer wins." << std::endl;
+        dealerWins++;
     } else if (dealerValue > 21) {
         std::cout << "Dealer busts! Player wins." << std::endl;
+        playerWins++;
     } else if (playerValue > dealerValue) {
         std::cout << "Player wins!" << std::endl;
+        playerWins++;
     } else if (dealerValue > playerValue) {
         std::cout << "Dealer wins!" << std::endl;
+        dealerWins++;
     } else {
         std::cout << "It's a push. Nobody wins!" << std::endl;
     }
+
+    m_ui.displayScoreboard(playerWins, dealerWins);
+
+    char c;
+    std::cout << "Press any key to continue...";
+    std::cin >> c;
 }
 
 void Game::displayGameState() {
     m_ui.clearScreen();
-    std::cout << "Dealer's hand:\n";
+    std::cout << "Dealer's hand: \n";
     m_ui.drawHand(m_dealer.getHand(), m_isPlayerTurn);
-    std::cout << "Player's Hand:\n";
-    m_ui.drawHand(m_player.getHand());
-
-    
+    std::cout << "Player's Hand:\tCount: " << m_player.getHandValue() << "\n";
+    m_ui.drawHand(m_player.getHand());    
 }

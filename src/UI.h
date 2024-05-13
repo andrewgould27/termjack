@@ -11,6 +11,7 @@
 class UI {
     public: 
     void clearScreen();
+    void displayScoreboard(int playerWins, int dealerWins);
     void drawHand(Hand hand);
     void drawHand(Hand hand, bool isPlayerTurn);
     private:

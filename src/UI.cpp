@@ -40,8 +40,6 @@ void UI::drawHand(Hand hand) {
         card_strs.emplace_back(drawCard(card));
     }
 
-    // {{top,left,center,right,bottom},{top,left,center,right,bottom},{top,left,center,right,bottom}}
-
     for (size_t i = 0; i < card_strs[0].size(); i++) {
         std::string curr = "";
         for (std::vector<std::string> vec : card_strs) {
@@ -51,14 +49,18 @@ void UI::drawHand(Hand hand) {
     }    
 }
 
+/**
+ * Constructs an entire screen buffer for the hand in question
+ * and pushes the buffer to stdout
+ * @param Hand The hand to display
+ * @param bool Is it the player's turn?
+ */
 void UI::drawHand(Hand hand, bool isPlayerTurn) {
     std::vector<Card> cards = hand.getCards();
     std::vector<std::vector<std::string>> card_strs;
     for (Card card : cards) {
         card_strs.emplace_back(drawCard(card));
     }
-
-    // {{top,left,center,right,bottom},{top,left,center,right,bottom},{top,left,center,right,bottom}}
 
     if (!isPlayerTurn) {
         for (size_t i = 0; i < card_strs[0].size(); i++) {
@@ -72,4 +74,14 @@ void UI::drawHand(Hand hand, bool isPlayerTurn) {
         for (std::string str : card_strs[0]) 
             std::cout << str << "\n";
     }
+}
+
+void UI::displayScoreboard(int playerWins, int dealerWins) {
+    std::string p_wins = "Player Wins: " + std::to_string(playerWins);
+    std::string d_wins = "Dealer Wins: " + std::to_string(dealerWins);
+    std::string space = "          ";
+
+    std::cout << "┌────────────────────────┬────────────────────────┐\n";
+    std::cout << "│ " + p_wins + space.substr(0, (23 - p_wins.size()) * 2) + "│ " + d_wins + space.substr(0, (23 - p_wins.size()) * 2) + "│\n";
+    std::cout << "└────────────────────────┴────────────────────────┘\n";
 }
